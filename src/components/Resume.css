@@ -1,0 +1,167 @@
+/* === Resume Section Wrapper === */
+.resume-section {
+  padding: 4rem 2rem;
+  text-align: center;
+  z-index: 1;
+}
+
+/* === Heading === */
+.resume-heading {
+  font-size: 2.8rem;
+  color: #ff3366;
+  margin-bottom: 2rem;
+}
+
+/* === Buttons === */
+.resume-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.resume-btn {
+  background-color: #ff3366;
+  color: white;
+  padding: 0.8rem 1.5rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.resume-btn.outline {
+  background: transparent;
+  border: 2px solid #ff3366;
+  color: #ff3366;
+}
+
+.resume-btn:hover {
+  background-color: #ff6699;
+  color: #fff;
+}
+
+/* === Modal Styles === */
+.resume-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 15, 15, 0.95);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.resume-modal-content {
+  background-color: #1a1a1a;
+  border: 2px solid #ff3366;
+  border-radius: 16px;
+  padding: 2rem;
+  max-width: 1000px;        /* Increased from 800px */
+  max-height: 95vh;         /* Allow taller content */
+  width: 95%;               /* Slightly wider for large screens */
+  position: relative;
+  text-align: center;
+  box-shadow: 0 0 25px #ff336644;
+  overflow-y: auto;         /* Allow scrolling for smaller screens */
+}
+
+/* Resume Image Preview */
+.resume-modal-content img {
+  width: 100%;
+  max-height: 90vh;         /* Increased max-height */
+  object-fit: contain;
+  border-radius: 12px;
+  margin-bottom: 1.5rem;
+}
+
+/* Close Button */
+.close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: #fff;
+  cursor: pointer;
+}
+
+/* === Mobile & Tablet Responsive Enhancements === */
+@media (max-width: 1024px) {
+  .resume-heading {
+    font-size: 2.2rem;
+  }
+
+  .resume-buttons {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .resume-btn,
+  .resume-btn.outline {
+    width: 100%;
+    padding: 0.75rem 1rem;
+    font-size: 1rem;
+  }
+
+  .resume-modal-content {
+    max-width: 95%;
+    max-height: 90vh;
+    padding: 1rem;
+  }
+
+  .resume-modal-content img {
+    max-height: 70vh;
+    border-radius: 8px;
+  }
+
+  .close-btn {
+    font-size: 1.2rem;
+    top: 0.8rem;
+    right: 0.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .resume-heading {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+  }
+
+  .resume-btn,
+  .resume-btn.outline {
+    font-size: 0.95rem;
+    padding: 0.6rem 1rem;
+  }
+
+  .resume-modal-content {
+    padding: 0.8rem;
+    border-radius: 10px;
+  }
+
+  .resume-modal-content img {
+    max-height: 65vh;
+  }
+
+  .close-btn {
+    font-size: 1.1rem;
+  }
+}

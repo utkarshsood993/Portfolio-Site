@@ -1,0 +1,79 @@
+.hero {
+  height: 100vh;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 8rem 2rem;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+}
+
+.parallax-heading,
+.parallax-subtext {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: none;
+}
+
+.parallax-heading {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.parallax-subtext h2 {
+  font-size: 1.5rem;
+  color: #ff3366;
+  min-height: 2.5rem;
+  margin-top: 1rem;
+}
+
+.hero span {
+  color: #ff3366;
+}
+
+/* ========== MEDIA QUERIES ========== */
+
+/* Tablets */
+@media (max-width: 768px) {
+  .hero {
+    padding: 6rem 1.5rem;
+  }
+
+  .parallax-heading {
+    font-size: 2.4rem;
+  }
+
+  .parallax-subtext h2 {
+    font-size: 1.3rem;
+  }
+}
+
+/* Mobile (large phones) */
+@media (max-width: 576px) {
+  .hero {
+    padding: 5rem 1rem;
+  }
+
+  .parallax-heading {
+    font-size: 2rem;
+    line-height: 1.3;
+  }
+
+  .parallax-subtext h2 {
+    font-size: 1.1rem;
+  }
+}
+
+/* Small mobile devices */
+@media (max-width: 400px) {
+  .parallax-heading {
+    font-size: 1.7rem;
+  }
+
+  .parallax-subtext h2 {
+    font-size: 1rem;
+  }
+}

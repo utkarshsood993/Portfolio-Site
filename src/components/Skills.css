@@ -1,0 +1,159 @@
+.skills-orbs-section {
+  position: relative;
+  padding: 5rem 2rem;
+  text-align: center;
+  z-index: 1;
+}
+
+.skills-card {
+  max-width: 1200px;
+  margin: auto;
+  padding: 2rem;
+  background-color: rgba(20, 20, 20, 0.5); /* Transparent dark */
+  backdrop-filter: blur(2px); /* Add blur effect */
+  -webkit-backdrop-filter: blur(10px); /* For Safari support */
+  border: 1px solid rgba(255, 255, 255, 0.1); /* Soft border */
+  border-radius: 20px;
+  z-index: 1;
+}
+
+.skills-heading {
+  font-size: 2.8rem;
+  color: #ff3366;
+  margin-bottom: 3rem;
+  text-align: center;
+  text-shadow: 0 0 8px rgba(255, 51, 102, 0.5); /* glowing pink text */
+}
+
+.orbs-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  max-width: 1000px;
+  margin: auto;
+  padding: 2rem;
+}
+
+.orb {
+  width: 130px; /* increased size */
+  height: 130px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #1f1f1f 30%, #000);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center; /* center multi-line content if any */
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: float 6s ease-in-out infinite;
+}
+
+.orb:hover {
+  transform: rotateY(360deg); /* fallback if animation fails */
+  animation: rotate-coin-hover 1.2s ease-in-out;
+  transform-style: preserve-3d;
+}
+
+
+/* Floating animation with increased amplitude */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-25px); /* increased movement */
+  }
+}
+
+/* Rotation on click like a coin */
+@keyframes rotate-coin-hover {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(360deg); /* 3 full spins */
+  }
+}
+/* Colorful glow per orb on hover */
+.orb:nth-child(1) { box-shadow: 0 0 20px #ff3366, 0 0 40px rgba(255, 51, 102, 0.5); }
+.orb:nth-child(2) { box-shadow: 0 0 20px #00f2ff, 0 0 40px rgba(0, 242, 255, 0.5); }
+.orb:nth-child(3) { box-shadow: 0 0 20px #a259ff, 0 0 40px rgba(162, 89, 255, 0.5); }
+.orb:nth-child(4) { box-shadow: 0 0 20px #90ff59, 0 0 40px rgba(144, 255, 89, 0.5); }
+.orb:nth-child(5) { box-shadow: 0 0 20px #7d59ff, 0 0 40px rgba(125, 89, 255, 0.5); }
+.orb:nth-child(6) { box-shadow: 0 0 20px #35ffbc, 0 0 40px rgba(53, 255, 188, 0.5); }
+.orb:nth-child(7) { box-shadow: 0 0 20px #ff8c00, 0 0 40px rgba(255, 140, 0, 0.5); }
+.orb:nth-child(8) { box-shadow: 0 0 20px #002c8d, 0 0 40px rgba(0, 44, 141, 0.5); }
+.orb:nth-child(9) { box-shadow: 0 0 20px #ffe683, 0 0 40px rgba(133, 255, 52, 0.5); }
+.orb:nth-child(10) { box-shadow: 0 0 20px #d480d1, 0 0 40px rgba(212, 128, 209, 0.5); }
+.orb:nth-child(11) { box-shadow: 0 0 20px #8ed1e3, 0 0 40px rgba(142, 209, 227, 0.5); }
+.orb:nth-child(12) { box-shadow: 0 0 20px #00ba4d, 0 0 40px rgba(0, 186, 77, 0.5); }
+.orb:nth-child(13) { box-shadow: 0 0 20px #ff0000, 0 0 40px rgba(255, 0, 0, 0.5); }
+.orb:nth-child(14) { box-shadow: 0 0 20px #008554, 0 0 40px rgba(0, 133, 84, 0.5); }
+
+
+/* ==================== Media Queries ==================== */
+
+/* For tablets and below (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .skills-heading {
+    font-size: 2.3rem;
+  }
+
+  .orb {
+    width: 110px;
+    height: 110px;
+    font-size: 0.9rem;
+  }
+
+  .orbs-grid {
+    gap: 1.5rem;
+    padding: 1.5rem;
+  }
+}
+
+/* For smaller tablets and large phones (max-width: 768px) */
+@media (max-width: 768px) {
+  .skills-heading {
+    font-size: 2rem;
+  }
+
+  .orb {
+    width: 95px;
+    height: 95px;
+    font-size: 0.85rem;
+  }
+
+  .orbs-grid {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 1rem;
+    padding: 1rem;
+  }
+}
+
+/* For mobile phones (max-width: 480px) */
+@media (max-width: 480px) {
+  .skills-orbs-section {
+    padding: 4rem 1rem;
+  }
+
+  .skills-heading {
+    font-size: 1.8rem;
+    margin-bottom: 2rem;
+  }
+
+  .orb {
+    width: 80px;
+    height: 80px;
+    font-size: 0.75rem;
+  }
+
+  .orbs-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.8rem;
+    padding: 0.8rem;
+  }
+}

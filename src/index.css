@@ -1,0 +1,106 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* Root Layout Reset */
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* Smooth scrolling and font setup */
+html {
+  font-size: 19px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  font-size: 18px;
+  color: white;
+  line-height: 1.6;
+  overflow-x: hidden;
+  background: linear-gradient(135deg, #121212, #1c1c1c);
+ /* important: no solid background */
+}
+
+/* Main container layout */
+main {
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* Typography scaling */
+:root {
+  --font-size-base: 18px;
+  --font-size-heading: 2.5rem;
+  --font-size-subheading: 1.5rem;
+}
+
+h1 {
+  font-size: var(--font-size-heading);
+}
+
+h2 {
+  font-size: var(--font-size-subheading);
+}
+
+/* Global element reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Link styles */
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* List reset */
+ul {
+  list-style: none;
+}
+
+/* ========== GLOBAL RESPONSIVE MEDIA QUERIES ========== */
+
+/* Tablet & below */
+@media (max-width: 1024px) {
+  html {
+    font-size: 17px;
+  }
+
+  :root {
+    --font-size-heading: 2.2rem;
+    --font-size-subheading: 1.3rem;
+  }
+}
+
+/* Mobile devices */
+@media (max-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+
+  :root {
+    --font-size-heading: 2rem;
+    --font-size-subheading: 1.2rem;
+  }
+
+  body {
+    padding: 0 1rem;
+  }
+}
+
+/* Very small screens */
+@media (max-width: 480px) {
+  html {
+    font-size: 15px;
+  }
+
+  :root {
+    --font-size-heading: 1.7rem;
+    --font-size-subheading: 1.1rem;
+  }
+}
