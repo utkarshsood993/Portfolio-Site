@@ -102,6 +102,7 @@
   border: none;
   color: #fff;
   cursor: pointer;
+   z-index: 10;
 }
 
 /* === Mobile & Tablet Responsive Enhancements === */
