@@ -1,9 +1,25 @@
-// src/components/ResumeSection.tsx
-import React, { useState } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import './Resume.css';
 
 const ResumePreview: React.FC = () => {
   const [showPreview, setShowPreview] = useState(false);
+  const modalRef = useRef<HTMLDivElement>(null);
+
+  const handleClickOutside = (e: MouseEvent) => {
+    if (modalRef.current && !modalRef.current.contains(e.target as Node)) {
+      setShowPreview(false);
+    }
+  };
+
+  useEffect(() => {
+    if (showPreview) {
+      document.addEventListener('mousedown', handleClickOutside);
+    } else {
+      document.removeEventListener('mousedown', handleClickOutside);
+    }
+
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [showPreview]);
 
   return (
     <section className="resume-section" id="resume">
@@ -14,20 +30,17 @@ const ResumePreview: React.FC = () => {
           View Resume
         </button>
 
-        <a
-          href="/UtkarshResume.pdf"
-          download
-          className="resume-btn outline"
-        >
+        <a href="/UtkarshResume.pdf" download className="resume-btn outline">
           Download Resume
         </a>
       </div>
 
-      {/* Modal-like popup for preview */}
       {showPreview && (
         <div className="resume-modal">
-          <div className="resume-modal-content">
-            <button onClick={() => setShowPreview(false)} className="close-btn">×</button>
+          <div className="resume-modal-content" ref={modalRef}>
+            <button onClick={() => setShowPreview(false)} className="close-btn">
+              ×
+            </button>
 
             <img
               src="/UtkarshResumePreview.jpg"
@@ -35,11 +48,7 @@ const ResumePreview: React.FC = () => {
               className="resume-image"
             />
 
-            <a
-              href="/UtkarshResume.pdf"
-              download
-              className="resume-btn"
-            >
+            <a href="/UtkarshResume.pdf" download className="resume-btn">
               Download Resume
             </a>
           </div>
